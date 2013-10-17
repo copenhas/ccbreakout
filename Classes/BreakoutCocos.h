@@ -11,6 +11,7 @@
 
 #include <cocos2d.h>
 #include "Breakout.h"
+#include "GLDebugDraw.h"
 
 class Convert {
 public:
@@ -20,8 +21,12 @@ public:
         return {point.x / PixelsPerMeter, (winSize.height - point.y) / PixelsPerMeter};
     }
     
+    static cocos2d::CCPoint PhysicalPositionToPixelPoint(cocos2d::CCSize winSize, Position pos) {
+        return {pos.x * PixelsPerMeter, winSize.height - (pos.y * PixelsPerMeter)};
+    }
+    
     static Size PixelSizeToPhysicalSize(cocos2d::CCSize size) {
-        return {size.height / PixelsPerMeter, size.width / PixelsPerMeter};
+        return {size.width / PixelsPerMeter, size.height / PixelsPerMeter};
     }
 };
 
@@ -34,7 +39,7 @@ private:
     GameInstance* _game;
     Level* _level;
     cocos2d::CCTMXTiledMap* _map;
-    
+
     void loadLevel();
 };
 
@@ -43,9 +48,13 @@ public:
     InGameScene();
     ~InGameScene();
     
+    void draw();
+    void update(float delta);
+    
 private:
     GameInstance* _game;
     LevelLayer* _levelLayer;
+    GLDebugDraw* _debugDraw;
 };
 
 #endif

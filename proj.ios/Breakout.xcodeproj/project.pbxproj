@@ -242,6 +242,7 @@
 		B372E815180EFF5F00317E2B /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B372E814180EFF5F00317E2B /* Block.cpp */; };
 		B372E818180F058200317E2B /* InGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B372E816180F058200317E2B /* InGameScene.cpp */; };
 		B372E81E180F068900317E2B /* LevelLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B372E81C180F068900317E2B /* LevelLayer.cpp */; };
+		B372E822180F7CE500317E2B /* GLDebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B372E820180F7CE500317E2B /* GLDebugDraw.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -747,6 +748,8 @@
 		B372E816180F058200317E2B /* InGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InGameScene.cpp; path = ../Classes/InGameScene.cpp; sourceTree = "<group>"; };
 		B372E81C180F068900317E2B /* LevelLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LevelLayer.cpp; path = ../Classes/LevelLayer.cpp; sourceTree = "<group>"; };
 		B372E81F180F06C100317E2B /* BreakoutCocos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BreakoutCocos.h; path = ../Classes/BreakoutCocos.h; sourceTree = "<group>"; };
+		B372E820180F7CE500317E2B /* GLDebugDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLDebugDraw.cpp; path = ../Classes/GLDebugDraw.cpp; sourceTree = "<group>"; };
+		B372E821180F7CE500317E2B /* GLDebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDebugDraw.h; path = ../Classes/GLDebugDraw.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -1289,6 +1292,8 @@
 				B372E807180E30D900317E2B /* Level.cpp */,
 				B372E81C180F068900317E2B /* LevelLayer.cpp */,
 				B372E811180EE54D00317E2B /* Physics.h */,
+				B372E820180F7CE500317E2B /* GLDebugDraw.cpp */,
+				B372E821180F7CE500317E2B /* GLDebugDraw.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -2040,6 +2045,7 @@
 				379BB9B417F03F3700829B88 /* Layout.cpp in Sources */,
 				379BB9B617F03F3700829B88 /* LayoutParameter.cpp in Sources */,
 				379BB9B717F03F3700829B88 /* UILayoutDefine.cpp in Sources */,
+				B372E822180F7CE500317E2B /* GLDebugDraw.cpp in Sources */,
 				379BB9B817F03F3700829B88 /* CocosGUI.cpp in Sources */,
 				379BB9B917F03F3700829B88 /* UIHelper.cpp in Sources */,
 				379BB9BA17F03F3700829B88 /* UIInputManager.cpp in Sources */,
@@ -2121,7 +2127,7 @@
 					"\"$(SRCROOT)/../../../cocos2dx/platform/third_party/ios/libraries\"",
 					"\"$(SRCROOT)/../../../external/libwebsockets/ios/lib\"",
 				);
-				OTHER_CFLAGS = "-O2";
+				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-v";
 				PRODUCT_NAME = Breakout;
 				PROVISIONING_PROFILE = "";

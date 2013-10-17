@@ -38,8 +38,16 @@ void LevelLayer::loadLevel() {
         for(int y = 0; y < layerSize.height; y++) {
             for(int x = 0; x < layerSize.width; x++){
                 auto sprite = tileLayer->tileAt({x, y});
+
                 if (!sprite) continue;
-                _level->addBlock(new Block(_game, Convert::PixelPointToPhysicalPosition(winSize, sprite->getPosition())));
+
+                auto tileId = tileLayer->tileGIDAt({x, y});
+                auto props = _map->propertiesForGID(tileId);
+                
+                float bounce = atof(props->valueForKey("bounce")->getCString());
+                float life = atof(props->valueForKey("strength")->getCString());
+                
+                _level->addBlock(new Block(_game, Convert::PixelPointToPhysicalPosition(winSize, sprite->getPosition()), bounce, life));
             }
         }
     }

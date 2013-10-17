@@ -3,10 +3,11 @@
 #include "Breakout.h"
 
 
-Block::Block(GameInstance* game, Position pos) : _game{game} {
+Block::Block(GameInstance* game, Position pos, float bounce, float life) : _game{game} {
     _pos = pos;
     _hitCount = 0;
-    _life = 3;
+    _life = (int)life;
+    _bounce = bounce;
 }
 
 Block::~Block() {
@@ -34,8 +35,12 @@ void Block::addToWorld() {
     _body = world->CreateBody(&bodyDef);
     
     b2PolygonShape shape;
-    shape.SetAsBox(1.5, 0.5, {_pos.x + 1.5, _pos.y + 0.5}, 0); //hard coded to be 3 meters wide by 1 meter high
-    _body->CreateFixture(&shape, 0);
+    shape.SetAsBox(1.5, 0.5, {1.5, -0.5}, 0); //hard coded to be 3 meters wide by 1 meter high
+    
+    b2FixtureDef fixture;
+    fixture.shape = &shape;
+    fixture.restitution = _bounce;
+    _body->CreateFixture(&fixture);
 }
 
 void Block::removeFromWorld() {

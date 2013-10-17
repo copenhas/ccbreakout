@@ -24,8 +24,8 @@ struct Position {
 };
 
 struct Size {
-    float height;
     float width;
+    float height;
 };
 
 enum class GameObjectId {
@@ -97,7 +97,7 @@ private:
 
 class Block: public GameObject {
 public:
-    Block(GameInstance* game, Position pos);
+    Block(GameInstance* game, Position pos, float bounce, float life);
     ~Block();
     
     GameObjectId getId() const;
@@ -113,6 +113,7 @@ private:
     b2Body* _body;
     int _hitCount;
     int _life;
+    float _bounce;
 };
 
 class Level: public GameObject {

@@ -7,6 +7,7 @@
 //
 
 #include "BreakoutCocos.h"
+#include "GLDebugDraw.h"
 
 using namespace cocos2d;
 
@@ -18,8 +19,26 @@ InGameScene::InGameScene() {
     
     _levelLayer = new LevelLayer(_game);
     addChild(_levelLayer);
+    
+    if (Physics::DrawBodies) {
+        _debugDraw = new GLDebugDraw(size);
+        _debugDraw->SetFlags(b2Draw::e_shapeBit);
+        _game->getWorld()->SetDebugDraw(_debugDraw);
+    }
+    
+    schedule(schedule_selector(InGameScene::update), Physics::TicksPerSecond);
 }
 
 InGameScene::~InGameScene() {
     delete _game;
+    if (_debugDraw) delete _debugDraw;
+}
+
+void InGameScene::draw() {
+    CCScene::draw();
+    if (_debugDraw) _game->getWorld()->DrawDebugData();
+}
+
+void InGameScene::update(float delta){
+    _game->update();
 }
