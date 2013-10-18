@@ -136,4 +136,38 @@ private:
     std::vector<Block*> _blocks;
 };
 
+class Paddle: public GameObject {
+public:
+    Paddle(GameInstance* game);
+    ~Paddle();
+    
+    GameObjectId getId() const;
+    Position getPosition() const;
+    void setPosition(Position p);
+    void addToWorld();
+    void removeFromWorld();
+    void collision(GameObject* obj, const b2Fixture* fixture);
+
+private:
+    GameInstance* _game;
+    b2Body* _body;
+};
+
+class Ball: public GameObject {
+public:
+    Ball(GameInstance* game);
+    ~Ball();
+    
+    GameObjectId getId() const;
+    Position getPosition() const;
+    void setPosition(Position p);
+    void addToWorld();
+    void removeFromWorld();
+    void collision(GameObject* obj, const b2Fixture* fixture);
+    
+private:
+    GameInstance* _game;
+    b2Body* _body;
+};
+
 #endif

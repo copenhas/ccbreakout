@@ -20,6 +20,9 @@ InGameScene::InGameScene() {
     _levelLayer = new LevelLayer(_game);
     addChild(_levelLayer);
     
+    _playerLayer = new PlayerLayer(_game);
+    addChild(_playerLayer);
+    
     if (Physics::DrawBodies) {
         _debugDraw = new GLDebugDraw(size);
         _debugDraw->SetFlags(b2Draw::e_shapeBit);
@@ -41,4 +44,5 @@ void InGameScene::draw() {
 
 void InGameScene::update(float delta){
     _game->update();
+    
 }

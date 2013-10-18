@@ -18,11 +18,11 @@ public:
     static constexpr float PixelsPerMeter = 20.0;
 
     static Position PixelPointToPhysicalPosition(cocos2d::CCSize winSize, cocos2d::CCPoint point) {
-        return {point.x / PixelsPerMeter, (winSize.height - point.y) / PixelsPerMeter};
+        return {point.x / PixelsPerMeter, point.y / PixelsPerMeter};
     }
     
     static cocos2d::CCPoint PhysicalPositionToPixelPoint(cocos2d::CCSize winSize, Position pos) {
-        return {pos.x * PixelsPerMeter, winSize.height - (pos.y * PixelsPerMeter)};
+        return {pos.x * PixelsPerMeter, pos.y * PixelsPerMeter};
     }
     
     static Size PixelSizeToPhysicalSize(cocos2d::CCSize size) {
@@ -32,7 +32,7 @@ public:
 
 class LevelLayer: public cocos2d::CCLayer {
 public:
-    LevelLayer(GameInstance* level);
+    LevelLayer(GameInstance* game);
     ~LevelLayer();
 
 private:
@@ -41,6 +41,23 @@ private:
     cocos2d::CCTMXTiledMap* _map;
 
     void loadLevel();
+};
+
+class PlayerLayer: public cocos2d::CCLayer {
+public:
+    PlayerLayer(GameInstance* game);
+    ~PlayerLayer();
+    
+    void draw();
+    void ccTouchesMoved(cocos2d::CCSet* pTouches, cocos2d::CCEvent* pEvent);
+    
+private:
+    cocos2d::CCSize _winSize;
+    GameInstance* _game;
+    Paddle* _paddle;
+    cocos2d::CCSprite* _paddleSprite;
+    Ball* _ball;
+    cocos2d::CCSprite* _ballSprite;
 };
 
 class InGameScene: public cocos2d::CCScene {
@@ -54,7 +71,9 @@ public:
 private:
     GameInstance* _game;
     LevelLayer* _levelLayer;
+    PlayerLayer* _playerLayer;
     GLDebugDraw* _debugDraw;
 };
+
 
 #endif

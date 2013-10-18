@@ -35,7 +35,7 @@ void Block::addToWorld() {
     _body = world->CreateBody(&bodyDef);
     
     b2PolygonShape shape;
-    shape.SetAsBox(1.5, 0.5, {1.5, -0.5}, 0); //hard coded to be 3 meters wide by 1 meter high
+    shape.SetAsBox(1.5, 0.5, {1.5, 0.5}, 0); //hard coded to be 3 meters wide by 1 meter high
     
     b2FixtureDef fixture;
     fixture.shape = &shape;
