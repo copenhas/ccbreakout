@@ -35,8 +35,17 @@ enum class GameObjectId {
     Block
 };
 
+class GameObjectListener {
+public:
+    virtual void onUpdated(GameObjectId objId, void* obj) { }
+    virtual void onAddedToWorld(GameObjectId objId, void* obj) { }
+    virtual void onRemovedFromWorld(GameObjectId objId, void* obj) { }
+    virtual void onCollision(GameObjectId objId, void* obj) { }
+};
+
 class GameObject {
 public:
+    GameObject();
     virtual ~GameObject() {}
     
     virtual GameObjectId getId() const =0;
@@ -48,6 +57,27 @@ public:
     virtual void removeFromWorld()=0;
     
     virtual void collision(GameObject* obj, const b2Fixture* fixture)=0;
+    
+    virtual void update();
+    
+    void* getData();
+    void setData(void* data);
+    
+    void addChild(GameObject* obj);
+    void removeChild(GameObject* obj);
+    
+    void addListener(GameObjectListener* listener);
+    void removeListener(GameObjectListener* listener);
+    
+    void triggerUpdated();
+    void triggerAddedToWorld();
+    void triggerRemovedFromWorld();
+    void triggerCollision();
+
+private:
+    std::vector<GameObjectListener*> _listeners;
+    std::vector<GameObject*> _children;
+    void* _data;
 };
 
 enum class GameState {
@@ -75,7 +105,6 @@ public:
     const Size getSize() const;
     
     GameState getState();
-    void start();
     void gameOver(bool won);
     
     void addToGame(GameObject* obj);
@@ -105,6 +134,7 @@ public:
     void setPosition(Position p);
     void addToWorld();
     void removeFromWorld();
+    
     void collision(GameObject* obj, const b2Fixture* fixture);
 
 private:
@@ -146,11 +176,14 @@ public:
     void setPosition(Position p);
     void addToWorld();
     void removeFromWorld();
+    void update();
     void collision(GameObject* obj, const b2Fixture* fixture);
 
 private:
     GameInstance* _game;
     b2Body* _body;
+    float _xVelocity;
+    b2Vec2 _lastPos;
 };
 
 class Ball: public GameObject {
@@ -163,7 +196,10 @@ public:
     void setPosition(Position p);
     void addToWorld();
     void removeFromWorld();
+    void update();
     void collision(GameObject* obj, const b2Fixture* fixture);
+    
+    void addForce(float x, float y);
     
 private:
     GameInstance* _game;

@@ -8,11 +8,48 @@
 
 #include "BreakoutCocos.h"
 #include "GLDebugDraw.h"
+#include "SimpleAudioEngine.h"
 
 using namespace cocos2d;
+using namespace CocosDenshion;
 
 InGameScene::InGameScene() {
+
+}
+
+InGameScene::~InGameScene() {
+
+}
+
+void InGameScene::draw() {
+    CCScene::draw();
+    if (_debugDraw) _game->getWorld()->DrawDebugData();
+}
+
+void InGameScene::update(float delta) {
+    _game->update();
+    
+    if (_game->getState() == GameState::Lost) {
+        unschedule(schedule_selector(InGameScene::update));
+        CCDirector::sharedDirector()->pushScene(CCTransitionFade::create(1.0, new GameOverScene()));
+    }
+}
+
+void InGameScene::onExit() {
+    SimpleAudioEngine::sharedEngine()->stopBackgroundMusic();
+    
+    unschedule(schedule_selector(InGameScene::update));
+    if (_debugDraw) delete _debugDraw;
+    removeAllChildren();
+    delete _game;
+    
+    CCScene::onExit();
+}
+
+void InGameScene::onEnter() {
+    CCScene::onEnter();
     auto size = CCDirector::sharedDirector()->getWinSizeInPixels();
+    
     _game = new GameInstance(Convert::PixelSizeToPhysicalSize(size));
     Level* level = new Level(_game);
     _game->addToGame(level);
@@ -30,19 +67,6 @@ InGameScene::InGameScene() {
     }
     
     schedule(schedule_selector(InGameScene::update), Physics::TicksPerSecond);
-}
-
-InGameScene::~InGameScene() {
-    delete _game;
-    if (_debugDraw) delete _debugDraw;
-}
-
-void InGameScene::draw() {
-    CCScene::draw();
-    if (_debugDraw) _game->getWorld()->DrawDebugData();
-}
-
-void InGameScene::update(float delta){
-    _game->update();
     
+    SimpleAudioEngine::sharedEngine()->playBackgroundMusic("background.m4a", true);
 }

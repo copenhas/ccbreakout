@@ -233,6 +233,7 @@
 		379BB9D317F03F3700829B88 /* CCSGUIReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB99117F03F3700829B88 /* CCSGUIReader.cpp */; };
 		379BB9D417F03F3700829B88 /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB99317F03F3700829B88 /* CCSSceneReader.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
+		B3131CDF1814C1660099528E /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CDE1814C1660099528E /* GameOverScene.cpp */; };
 		B372E7FF180E253A00317E2B /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = B372E7FB180E253A00317E2B /* ball.png */; };
 		B372E800180E253A00317E2B /* block-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = B372E7FC180E253A00317E2B /* block-tileset.png */; };
 		B372E801180E253A00317E2B /* level1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B372E7FD180E253A00317E2B /* level1.tmx */; };
@@ -246,6 +247,9 @@
 		B372E8261810C18800317E2B /* PlayerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B372E8251810C18800317E2B /* PlayerLayer.cpp */; };
 		B372E8281810C5AA00317E2B /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B372E8271810C5AA00317E2B /* Paddle.cpp */; };
 		B372E82A1810D2B300317E2B /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B372E8291810D2B300317E2B /* Ball.cpp */; };
+		B372E82E181178A800317E2B /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B372E82D181178A800317E2B /* GameObject.cpp */; };
+		B3BBD981181F56CE00C88FD2 /* hit.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B3BBD980181F56CE00C88FD2 /* hit.m4a */; };
+		B3BBD983181F594A00C88FD2 /* background.m4a in Resources */ = {isa = PBXBuildFile; fileRef = B3BBD982181F594A00C88FD2 /* background.m4a */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -739,6 +743,7 @@
 		379BB99317F03F3700829B88 /* CCSSceneReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSSceneReader.cpp; sourceTree = "<group>"; };
 		379BB99417F03F3700829B88 /* CCSSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSSceneReader.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
+		B3131CDE1814C1660099528E /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOverScene.cpp; path = ../Classes/GameOverScene.cpp; sourceTree = "<group>"; };
 		B372E7FB180E253A00317E2B /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		B372E7FC180E253A00317E2B /* block-tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block-tileset.png"; sourceTree = "<group>"; };
 		B372E7FD180E253A00317E2B /* level1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level1.tmx; sourceTree = "<group>"; };
@@ -756,6 +761,9 @@
 		B372E8251810C18800317E2B /* PlayerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerLayer.cpp; path = ../Classes/PlayerLayer.cpp; sourceTree = "<group>"; };
 		B372E8271810C5AA00317E2B /* Paddle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Paddle.cpp; path = ../Classes/Paddle.cpp; sourceTree = "<group>"; };
 		B372E8291810D2B300317E2B /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ball.cpp; path = ../Classes/Ball.cpp; sourceTree = "<group>"; };
+		B372E82D181178A800317E2B /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../Classes/GameObject.cpp; sourceTree = "<group>"; };
+		B3BBD980181F56CE00C88FD2 /* hit.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = hit.m4a; sourceTree = "<group>"; };
+		B3BBD982181F594A00C88FD2 /* background.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = background.m4a; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -1290,19 +1298,21 @@
 			children = (
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
+				B372E8291810D2B300317E2B /* Ball.cpp */,
 				B372E814180EFF5F00317E2B /* Block.cpp */,
 				B372E80F180EC3B500317E2B /* Breakout.h */,
 				B372E81F180F06C100317E2B /* BreakoutCocos.h */,
 				B372E812180EEE6D00317E2B /* GameInstance.cpp */,
+				B372E82D181178A800317E2B /* GameObject.cpp */,
+				B3131CDE1814C1660099528E /* GameOverScene.cpp */,
 				B372E820180F7CE500317E2B /* GLDebugDraw.cpp */,
 				B372E821180F7CE500317E2B /* GLDebugDraw.h */,
 				B372E816180F058200317E2B /* InGameScene.cpp */,
 				B372E807180E30D900317E2B /* Level.cpp */,
 				B372E81C180F068900317E2B /* LevelLayer.cpp */,
+				B372E8271810C5AA00317E2B /* Paddle.cpp */,
 				B372E811180EE54D00317E2B /* Physics.h */,
 				B372E8251810C18800317E2B /* PlayerLayer.cpp */,
-				B372E8271810C5AA00317E2B /* Paddle.cpp */,
-				B372E8291810D2B300317E2B /* Ball.cpp */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1747,6 +1757,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B3BBD982181F594A00C88FD2 /* background.m4a */,
+				B3BBD980181F56CE00C88FD2 /* hit.m4a */,
 				B372E7FB180E253A00317E2B /* ball.png */,
 				B372E7FC180E253A00317E2B /* block-tileset.png */,
 				B372E7FD180E253A00317E2B /* level1.tmx */,
@@ -1843,6 +1855,8 @@
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
+				B3BBD981181F56CE00C88FD2 /* hit.m4a in Resources */,
+				B3BBD983181F594A00C88FD2 /* background.m4a in Resources */,
 				B372E7FF180E253A00317E2B /* ball.png in Resources */,
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
@@ -1866,6 +1880,7 @@
 			files = (
 				15A3D8FF1682F7D5002FB0C5 /* b2BroadPhase.cpp in Sources */,
 				15A3D9001682F7D5002FB0C5 /* b2CollideCircle.cpp in Sources */,
+				B372E82E181178A800317E2B /* GameObject.cpp in Sources */,
 				15A3D9011682F7D5002FB0C5 /* b2CollideEdge.cpp in Sources */,
 				15A3D9021682F7D5002FB0C5 /* b2CollidePolygon.cpp in Sources */,
 				15A3D9031682F7D5002FB0C5 /* b2Collision.cpp in Sources */,
@@ -2083,6 +2098,7 @@
 				379BB9CF17F03F3700829B88 /* json_value.cpp in Sources */,
 				379BB9D117F03F3700829B88 /* json_writer.cpp in Sources */,
 				379BB9D317F03F3700829B88 /* CCSGUIReader.cpp in Sources */,
+				B3131CDF1814C1660099528E /* GameOverScene.cpp in Sources */,
 				379BB9D417F03F3700829B88 /* CCSSceneReader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

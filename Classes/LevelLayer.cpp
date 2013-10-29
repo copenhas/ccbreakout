@@ -7,26 +7,25 @@
 //
 
 #include "BreakoutCocos.h"
+#include "SimpleAudioEngine.h"
 
 using namespace cocos2d;
+using namespace CocosDenshion;
 
 LevelLayer::LevelLayer(GameInstance* game) {
     _game = game;
     _level = new Level(_game);
     _game->addToGame(_level);
-    
-    _map = CCTMXTiledMap::create("level1.tmx");
     loadLevel();
-    _level->addToWorld();
-    
-    addChild(_map);
 }
 
 LevelLayer::~LevelLayer() {
-    
+
 }
 
 void LevelLayer::loadLevel() {
+    _map = CCTMXTiledMap::create("level1.tmx");
+
     auto winSize = CCDirector::sharedDirector()->getWinSizeInPixels();
     
     CCObject* obj = nullptr;
@@ -47,8 +46,23 @@ void LevelLayer::loadLevel() {
                 float bounce = atof(props->valueForKey("bounce")->getCString());
                 float life = atof(props->valueForKey("strength")->getCString());
                 
-                _level->addBlock(new Block(_game, Convert::PixelPointToPhysicalPosition(winSize, sprite->getPosition()), bounce, life));
+                auto block = new Block(_game, Convert::PixelPointToPhysicalPosition(winSize, sprite->getPosition()), bounce, life);
+                block->setData(sprite);
+                block->addListener(this);
+                _level->addBlock(block);
             }
         }
+    }
+    
+    _level->addToWorld();
+    addChild(_map);
+}
+
+void LevelLayer::onRemovedFromWorld(GameObjectId objId, void* obj){
+    if (objId == GameObjectId::Block) {
+        auto block = (Block*)obj;
+        auto sprite = (CCSprite*)block->getData();
+        sprite->setVisible(false);
+        SimpleAudioEngine::sharedEngine()->playEffect("hit.m4a");
     }
 }

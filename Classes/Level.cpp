@@ -56,6 +56,8 @@ void Level::addToWorld() {
     for(auto block : _blocks) {
         block->addToWorld();
     }
+    
+    triggerAddedToWorld();
 }
 
 void Level::removeFromWorld() {
@@ -64,14 +66,19 @@ void Level::removeFromWorld() {
     }
     
     if (_walls) _game->getWorld()->DestroyBody(_walls);
+    
+    triggerRemovedFromWorld();
 }
 
 void Level::addBlock(Block *block){
     _blocks.push_back(block);
+    addChild(block);
 }
 
 void Level::collision(GameObject* obj, const b2Fixture* fixture) {
     if (obj->getId() == GameObjectId::Ball && fixture == _floor) {
-        //trigger end game
+        _game->gameOver(false);
     }
+    
+    triggerCollision();
 }

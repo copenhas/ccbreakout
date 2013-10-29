@@ -171,7 +171,6 @@
 		1AFAF8C416D3884900DB1158 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8C116D3884900DB1158 /* CloseSelected.png */; };
 		1AFAF8C516D3884900DB1158 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AFAF8C216D3884900DB1158 /* HelloWorld.png */; };
 		1AFAF8CA16D3886000DB1158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8C616D3886000DB1158 /* AppDelegate.cpp */; };
-		1AFAF8CB16D3886000DB1158 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */; };
 		379BBA7817F03FDE00829B88 /* CCActionFrame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB9DF17F03FDE00829B88 /* CCActionFrame.cpp */; };
 		379BBA7917F03FDE00829B88 /* CCActionFrameEasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB9E117F03FDE00829B88 /* CCActionFrameEasing.cpp */; };
 		379BBA7A17F03FDE00829B88 /* CCActionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB9E317F03FDE00829B88 /* CCActionManager.cpp */; };
@@ -242,6 +241,22 @@
 		41BC70E815BF81A5006A0A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70E115BF81A5006A0A6C /* main.m */; };
 		8C583FAD169DB6D500F63A10 /* CCEditBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FA8169DB6D500F63A10 /* CCEditBox.cpp */; };
 		8C583FAE169DB6D500F63A10 /* CCEditBoxImplMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */; };
+		B3131CF01815C9F00099528E /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CE11815C9F00099528E /* Ball.cpp */; };
+		B3131CF11815C9F00099528E /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CE21815C9F00099528E /* Block.cpp */; };
+		B3131CF21815C9F00099528E /* GameInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CE51815C9F00099528E /* GameInstance.cpp */; };
+		B3131CF31815C9F00099528E /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CE61815C9F00099528E /* GameObject.cpp */; };
+		B3131CF41815C9F00099528E /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CE71815C9F00099528E /* GameOverScene.cpp */; };
+		B3131CF51815C9F00099528E /* GLDebugDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CE81815C9F00099528E /* GLDebugDraw.cpp */; };
+		B3131CF61815C9F00099528E /* InGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CEA1815C9F00099528E /* InGameScene.cpp */; };
+		B3131CF71815C9F00099528E /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CEB1815C9F00099528E /* Level.cpp */; };
+		B3131CF81815C9F00099528E /* LevelLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CEC1815C9F00099528E /* LevelLayer.cpp */; };
+		B3131CF91815C9F00099528E /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CED1815C9F00099528E /* Paddle.cpp */; };
+		B3131CFA1815C9F00099528E /* PlayerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3131CEF1815C9F00099528E /* PlayerLayer.cpp */; };
+		B3131D011815CA020099528E /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = B3131CFB1815CA020099528E /* ball.png */; };
+		B3131D021815CA020099528E /* block-tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = B3131CFC1815CA020099528E /* block-tileset.png */; };
+		B3131D031815CA020099528E /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3131CFE1815CA020099528E /* Marker Felt.ttf */; };
+		B3131D041815CA020099528E /* level1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = B3131CFF1815CA020099528E /* level1.tmx */; };
+		B3131D051815CA020099528E /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = B3131D001815CA020099528E /* paddle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -582,8 +597,6 @@
 		1AFAF8C216D3884900DB1158 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
 		1AFAF8C616D3886000DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		1AFAF8C716D3886000DB1158 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
-		1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
-		1AFAF8C916D3886000DB1158 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breakout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379BB9DF17F03FDE00829B88 /* CCActionFrame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCActionFrame.cpp; sourceTree = "<group>"; };
 		379BB9E017F03FDE00829B88 /* CCActionFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionFrame.h; sourceTree = "<group>"; };
@@ -730,6 +743,26 @@
 		8C583FAA169DB6D500F63A10 /* CCEditBoxImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImpl.h; path = CCEditBox/CCEditBoxImpl.h; sourceTree = "<group>"; };
 		8C583FAB169DB6D500F63A10 /* CCEditBoxImplMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImplMac.h; path = CCEditBox/CCEditBoxImplMac.h; sourceTree = "<group>"; };
 		8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CCEditBoxImplMac.mm; path = CCEditBox/CCEditBoxImplMac.mm; sourceTree = "<group>"; };
+		B3131CE11815C9F00099528E /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ball.cpp; path = ../Classes/Ball.cpp; sourceTree = "<group>"; };
+		B3131CE21815C9F00099528E /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Block.cpp; path = ../Classes/Block.cpp; sourceTree = "<group>"; };
+		B3131CE31815C9F00099528E /* Breakout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Breakout.h; path = ../Classes/Breakout.h; sourceTree = "<group>"; };
+		B3131CE41815C9F00099528E /* BreakoutCocos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BreakoutCocos.h; path = ../Classes/BreakoutCocos.h; sourceTree = "<group>"; };
+		B3131CE51815C9F00099528E /* GameInstance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameInstance.cpp; path = ../Classes/GameInstance.cpp; sourceTree = "<group>"; };
+		B3131CE61815C9F00099528E /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../Classes/GameObject.cpp; sourceTree = "<group>"; };
+		B3131CE71815C9F00099528E /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOverScene.cpp; path = ../Classes/GameOverScene.cpp; sourceTree = "<group>"; };
+		B3131CE81815C9F00099528E /* GLDebugDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLDebugDraw.cpp; path = ../Classes/GLDebugDraw.cpp; sourceTree = "<group>"; };
+		B3131CE91815C9F00099528E /* GLDebugDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLDebugDraw.h; path = ../Classes/GLDebugDraw.h; sourceTree = "<group>"; };
+		B3131CEA1815C9F00099528E /* InGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = InGameScene.cpp; path = ../Classes/InGameScene.cpp; sourceTree = "<group>"; };
+		B3131CEB1815C9F00099528E /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Level.cpp; path = ../Classes/Level.cpp; sourceTree = "<group>"; };
+		B3131CEC1815C9F00099528E /* LevelLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LevelLayer.cpp; path = ../Classes/LevelLayer.cpp; sourceTree = "<group>"; };
+		B3131CED1815C9F00099528E /* Paddle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Paddle.cpp; path = ../Classes/Paddle.cpp; sourceTree = "<group>"; };
+		B3131CEE1815C9F00099528E /* Physics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Physics.h; path = ../Classes/Physics.h; sourceTree = "<group>"; };
+		B3131CEF1815C9F00099528E /* PlayerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PlayerLayer.cpp; path = ../Classes/PlayerLayer.cpp; sourceTree = "<group>"; };
+		B3131CFB1815CA020099528E /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		B3131CFC1815CA020099528E /* block-tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block-tileset.png"; sourceTree = "<group>"; };
+		B3131CFE1815CA020099528E /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
+		B3131CFF1815CA020099528E /* level1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level1.tmx; sourceTree = "<group>"; };
+		B3131D001815CA020099528E /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -758,10 +791,23 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B3131CE11815C9F00099528E /* Ball.cpp */,
+				B3131CE21815C9F00099528E /* Block.cpp */,
+				B3131CE31815C9F00099528E /* Breakout.h */,
+				B3131CE41815C9F00099528E /* BreakoutCocos.h */,
+				B3131CE51815C9F00099528E /* GameInstance.cpp */,
+				B3131CE61815C9F00099528E /* GameObject.cpp */,
+				B3131CE71815C9F00099528E /* GameOverScene.cpp */,
+				B3131CE81815C9F00099528E /* GLDebugDraw.cpp */,
+				B3131CE91815C9F00099528E /* GLDebugDraw.h */,
+				B3131CEA1815C9F00099528E /* InGameScene.cpp */,
+				B3131CEB1815C9F00099528E /* Level.cpp */,
+				B3131CEC1815C9F00099528E /* LevelLayer.cpp */,
+				B3131CED1815C9F00099528E /* Paddle.cpp */,
+				B3131CEE1815C9F00099528E /* Physics.h */,
+				B3131CEF1815C9F00099528E /* PlayerLayer.cpp */,
 				1AFAF8C616D3886000DB1158 /* AppDelegate.cpp */,
 				1AFAF8C716D3886000DB1158 /* AppDelegate.h */,
-				1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */,
-				1AFAF8C916D3886000DB1158 /* HelloWorldScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1665,6 +1711,11 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B3131CFB1815CA020099528E /* ball.png */,
+				B3131CFC1815CA020099528E /* block-tileset.png */,
+				B3131CFD1815CA020099528E /* fonts */,
+				B3131CFF1815CA020099528E /* level1.tmx */,
+				B3131D001815CA020099528E /* paddle.png */,
 				1AFAF8C016D3884900DB1158 /* CloseNormal.png */,
 				1AFAF8C116D3884900DB1158 /* CloseSelected.png */,
 				1AFAF8C216D3884900DB1158 /* HelloWorld.png */,
@@ -1683,6 +1734,14 @@
 				8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */,
 			);
 			name = CCEditBox;
+			sourceTree = "<group>";
+		};
+		B3131CFD1815CA020099528E /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B3131CFE1815CA020099528E /* Marker Felt.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1755,10 +1814,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3131D041815CA020099528E /* level1.tmx in Resources */,
 				41BC70E515BF81A5006A0A6C /* InfoPlist.strings in Resources */,
 				41BC70E615BF81A5006A0A6C /* MainMenu.xib in Resources */,
+				B3131D031815CA020099528E /* Marker Felt.ttf in Resources */,
+				B3131D011815CA020099528E /* ball.png in Resources */,
 				41BC70E715BF81A5006A0A6C /* Icon.icns in Resources */,
 				15C157DA168315B300D239F2 /* CMakeLists.txt in Resources */,
+				B3131D051815CA020099528E /* paddle.png in Resources */,
 				1AFAF8C316D3884900DB1158 /* CloseNormal.png in Resources */,
 				1AFAF8C416D3884900DB1158 /* CloseSelected.png in Resources */,
 				1AFAF8C516D3884900DB1158 /* HelloWorld.png in Resources */,
@@ -1766,6 +1829,7 @@
 				379BBAB017F03FDE00829B88 /* json_internalmap.inl in Resources */,
 				379BBAB317F03FDE00829B88 /* json_valueiterator.inl in Resources */,
 				379BBAB517F03FDE00829B88 /* sconscript in Resources */,
+				B3131D021815CA020099528E /* block-tileset.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1804,6 +1868,7 @@
 				15C1575A1683159E00D239F2 /* b2WorldCallbacks.cpp in Sources */,
 				15C1575B1683159E00D239F2 /* b2ChainAndCircleContact.cpp in Sources */,
 				15C1575C1683159E00D239F2 /* b2ChainAndPolygonContact.cpp in Sources */,
+				B3131CF01815C9F00099528E /* Ball.cpp in Sources */,
 				15C1575D1683159E00D239F2 /* b2CircleContact.cpp in Sources */,
 				15C1575E1683159E00D239F2 /* b2Contact.cpp in Sources */,
 				15C1575F1683159E00D239F2 /* b2ContactSolver.cpp in Sources */,
@@ -1814,6 +1879,7 @@
 				15C157641683159E00D239F2 /* b2DistanceJoint.cpp in Sources */,
 				15C157651683159E00D239F2 /* b2FrictionJoint.cpp in Sources */,
 				15C157661683159E00D239F2 /* b2GearJoint.cpp in Sources */,
+				B3131CF11815C9F00099528E /* Block.cpp in Sources */,
 				15C157671683159E00D239F2 /* b2Joint.cpp in Sources */,
 				15C157681683159E00D239F2 /* b2MouseJoint.cpp in Sources */,
 				15C157691683159E00D239F2 /* b2PrismaticJoint.cpp in Sources */,
@@ -1844,6 +1910,7 @@
 				15C157EC168315B300D239F2 /* cpHashSet.c in Sources */,
 				15C157ED168315B300D239F2 /* cpPolyShape.c in Sources */,
 				15C157EE168315B300D239F2 /* cpShape.c in Sources */,
+				B3131CF41815C9F00099528E /* GameOverScene.cpp in Sources */,
 				15C157EF168315B300D239F2 /* cpSpace.c in Sources */,
 				15C157F0168315B300D239F2 /* cpSpaceComponent.c in Sources */,
 				15C157F1168315B300D239F2 /* cpSpaceHash.c in Sources */,
@@ -1863,8 +1930,10 @@
 				15C15922168315E500D239F2 /* CCControlLoader.cpp in Sources */,
 				15C15923168315E500D239F2 /* CCData.cpp in Sources */,
 				15C15924168315E500D239F2 /* CCLabelBMFontLoader.cpp in Sources */,
+				B3131CFA1815C9F00099528E /* PlayerLayer.cpp in Sources */,
 				15C15925168315E500D239F2 /* CCLabelTTFLoader.cpp in Sources */,
 				15C15926168315E500D239F2 /* CCLayerColorLoader.cpp in Sources */,
+				B3131CF81815C9F00099528E /* LevelLayer.cpp in Sources */,
 				15C15927168315E500D239F2 /* CCLayerGradientLoader.cpp in Sources */,
 				15C15928168315E500D239F2 /* CCLayerLoader.cpp in Sources */,
 				15C15929168315E500D239F2 /* CCMenuItemImageLoader.cpp in Sources */,
@@ -1904,7 +1973,7 @@
 				8C583FAD169DB6D500F63A10 /* CCEditBox.cpp in Sources */,
 				8C583FAE169DB6D500F63A10 /* CCEditBoxImplMac.mm in Sources */,
 				1AFAF8CA16D3886000DB1158 /* AppDelegate.cpp in Sources */,
-				1AFAF8CB16D3886000DB1158 /* HelloWorldScene.cpp in Sources */,
+				B3131CF61815C9F00099528E /* InGameScene.cpp in Sources */,
 				1A40E75B1727BFC6006D4861 /* Animation.cpp in Sources */,
 				1A40E75C1727BFC6006D4861 /* AnimationState.cpp in Sources */,
 				1A40E75D1727BFC6006D4861 /* AnimationStateData.cpp in Sources */,
@@ -1930,6 +1999,7 @@
 				1A9CE9A51765A7FA000E3062 /* LocalStorage.cpp in Sources */,
 				1A9CE9A61765A7FA000E3062 /* LocalStorageAndroid.cpp in Sources */,
 				379BBA7817F03FDE00829B88 /* CCActionFrame.cpp in Sources */,
+				B3131CF91815C9F00099528E /* Paddle.cpp in Sources */,
 				379BBA7917F03FDE00829B88 /* CCActionFrameEasing.cpp in Sources */,
 				379BBA7A17F03FDE00829B88 /* CCActionManager.cpp in Sources */,
 				379BBA7B17F03FDE00829B88 /* CCActionNode.cpp in Sources */,
@@ -1954,6 +2024,7 @@
 				379BBA8E17F03FDE00829B88 /* CCTweenFunction.cpp in Sources */,
 				379BBA8F17F03FDE00829B88 /* CCUtilMath.cpp in Sources */,
 				379BBA9017F03FDE00829B88 /* CCComAttribute.cpp in Sources */,
+				B3131CF31815C9F00099528E /* GameObject.cpp in Sources */,
 				379BBA9117F03FDE00829B88 /* CCComAudio.cpp in Sources */,
 				379BBA9217F03FDE00829B88 /* CCComController.cpp in Sources */,
 				379BBA9317F03FDE00829B88 /* CCComRender.cpp in Sources */,
@@ -1963,6 +2034,7 @@
 				379BBA9717F03FDE00829B88 /* Layout.cpp in Sources */,
 				379BBA9917F03FDE00829B88 /* LayoutParameter.cpp in Sources */,
 				379BBA9A17F03FDE00829B88 /* UILayoutDefine.cpp in Sources */,
+				B3131CF51815C9F00099528E /* GLDebugDraw.cpp in Sources */,
 				379BBA9B17F03FDE00829B88 /* CocosGUI.cpp in Sources */,
 				379BBA9C17F03FDE00829B88 /* UIHelper.cpp in Sources */,
 				379BBA9D17F03FDE00829B88 /* UIInputManager.cpp in Sources */,
@@ -1975,11 +2047,13 @@
 				379BBAA417F03FDE00829B88 /* UICheckBox.cpp in Sources */,
 				379BBAA517F03FDE00829B88 /* UIImageView.cpp in Sources */,
 				379BBAA617F03FDE00829B88 /* UILabel.cpp in Sources */,
+				B3131CF21815C9F00099528E /* GameInstance.cpp in Sources */,
 				379BBAA717F03FDE00829B88 /* UILabelAtlas.cpp in Sources */,
 				379BBAA817F03FDE00829B88 /* UILabelBMFont.cpp in Sources */,
 				379BBAA917F03FDE00829B88 /* UILoadingBar.cpp in Sources */,
 				379BBAAA17F03FDE00829B88 /* UISlider.cpp in Sources */,
 				379BBAAB17F03FDE00829B88 /* UISwitch.cpp in Sources */,
+				B3131CF71815C9F00099528E /* Level.cpp in Sources */,
 				379BBAAC17F03FDE00829B88 /* UITextField.cpp in Sources */,
 				379BBAAD17F03FDE00829B88 /* CSContentJsonDictionary.cpp in Sources */,
 				379BBAAE17F03FDE00829B88 /* DictionaryHelper.cpp in Sources */,
@@ -2025,6 +2099,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
@@ -2067,6 +2143,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;

@@ -36,13 +36,28 @@ void Paddle::addToWorld() {
     fixture.restitution = 4;
     fixture.shape = &shape;
     _body->CreateFixture(&fixture);
+    
+    _lastPos = _body->GetPosition();
+    
+    triggerAddedToWorld();
 }
 
 void Paddle::removeFromWorld() {
     _game->getWorld()->DestroyBody(_body);
+    
+    triggerRemovedFromWorld();
+}
+
+void Paddle::update() {
+    _xVelocity = _lastPos.x - _body->GetPosition().x;
+    _lastPos = _body->GetPosition();
 }
 
 void Paddle::collision(GameObject* obj, const b2Fixture* fixture) {
     if (obj->getId() == GameObjectId::Ball) {
+        auto ball = (Ball*) obj;
+        ball->addForce(-_xVelocity * 100, 0);
     }
+    
+    triggerCollision();
 }

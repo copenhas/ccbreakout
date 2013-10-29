@@ -14,6 +14,9 @@ GameInstance::GameInstance(Size size) : _objects{}, _collisions{} {
     _world->SetAllowSleeping(true);
     _world->SetContinuousPhysics(true);
     _world->SetContactListener(this);
+    
+    //just go ahead and ignore game states for now
+    _state = GameState::Playing;
 }
 
 GameInstance::~GameInstance() {
@@ -21,6 +24,8 @@ GameInstance::~GameInstance() {
 }
     
 void GameInstance::update() {
+    for(auto obj: _objects) obj->update();
+    
     _world->Step(Physics::TicksPerSecond, Physics::IterationsPerTick, 1);
     
     for(auto collision : _collisions) {
@@ -29,6 +34,8 @@ void GameInstance::update() {
     }
     
     _collisions.clear();
+    
+    for(auto obj : _objects) obj->triggerUpdated();
 }
     
 b2World* GameInstance::getWorld() {
@@ -39,17 +46,13 @@ const Size GameInstance::getSize() const { return _size; }
 
 GameState GameInstance::getState() { return _state; }
 
-void GameInstance::start() {
-    _state = GameState::Start;
-}
-
 void GameInstance::gameOver(bool won) {
     if (_state != GameState::Playing) return;
         
     if (won) _state = GameState::Won;
     else _state = GameState::Lost;
 }
-    
+
 void GameInstance::addToGame(GameObject* obj){
     _objects.push_back(obj);
 }

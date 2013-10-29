@@ -30,10 +30,12 @@ public:
     }
 };
 
-class LevelLayer: public cocos2d::CCLayer {
+class LevelLayer: public cocos2d::CCLayer, GameObjectListener {
 public:
     LevelLayer(GameInstance* game);
     ~LevelLayer();
+    
+    void onRemovedFromWorld(GameObjectId objId, void* obj);
 
 private:
     GameInstance* _game;
@@ -68,11 +70,25 @@ public:
     void draw();
     void update(float delta);
     
+    void onEnter();
+    void onExit();
+    
 private:
     GameInstance* _game;
     LevelLayer* _levelLayer;
     PlayerLayer* _playerLayer;
     GLDebugDraw* _debugDraw;
+};
+
+class GameOverScene: public cocos2d::CCScene {
+public:
+    GameOverScene();
+    ~GameOverScene();
+    
+    void cleanup();
+    
+private:
+    void restart();
 };
 
 

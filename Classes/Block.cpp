@@ -41,10 +41,14 @@ void Block::addToWorld() {
     fixture.shape = &shape;
     fixture.restitution = _bounce;
     _body->CreateFixture(&fixture);
+    
+    triggerAddedToWorld();
 }
 
 void Block::removeFromWorld() {
     _game->getWorld()->DestroyBody(_body);
+    
+    triggerRemovedFromWorld();
 }
 
 void Block::collision(GameObject *obj, const b2Fixture *fixture){
@@ -53,4 +57,6 @@ void Block::collision(GameObject *obj, const b2Fixture *fixture){
         
         if (_hitCount >= _life) removeFromWorld();
     }
+    
+    triggerCollision();
 }

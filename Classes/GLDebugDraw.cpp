@@ -23,7 +23,7 @@ void GLDebugDraw::DrawSolidPolygon(const b2Vec2* aVertices, int32 aVertexCount, 
 	{
         Position pos{aVertices[i].x, aVertices[i].y};
         auto point = Convert::PhysicalPositionToPixelPoint(_winSize, pos);
-		vertices[i] = point;
+		vertices[i] = CCPoint(point.x + 1, point.y + 1);
 	}
     
     ccDrawColor4F(aColor.r, aColor.g, aColor.b, 1.0f);
