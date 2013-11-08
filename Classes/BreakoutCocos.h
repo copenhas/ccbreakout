@@ -41,6 +41,7 @@ private:
     GameInstance* _game;
     Level* _level;
     cocos2d::CCTMXTiledMap* _map;
+    cocos2d::CCSprite* _background;
 
     void loadLevel();
 };

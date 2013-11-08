@@ -16,6 +16,13 @@ LevelLayer::LevelLayer(GameInstance* game) {
     _game = game;
     _level = new Level(_game);
     _game->addToGame(_level);
+    
+    _background = CCSprite::create("background.jpg");
+    _background->setAnchorPoint({0,0});
+    _background->setPosition({0, 0});
+    _background->setOpacity(100);
+    addChild(_background, -1);
+
     loadLevel();
 }
 
@@ -62,7 +69,7 @@ void LevelLayer::onRemovedFromWorld(GameObjectId objId, void* obj){
     if (objId == GameObjectId::Block) {
         auto block = (Block*)obj;
         auto sprite = (CCSprite*)block->getData();
-        sprite->setVisible(false);
+        sprite->runAction(CCFadeOut::create(0.5));
         SimpleAudioEngine::sharedEngine()->playEffect("hit.m4a");
     }
 }

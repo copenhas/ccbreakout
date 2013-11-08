@@ -27,7 +27,7 @@ void Ball::addToWorld() {
     bodyDef.position.Set(size.width / 2 + 1.5, 5);
     bodyDef.userData = this;
     bodyDef.bullet = true;
-    bodyDef.gravityScale = 0.25;
+    bodyDef.gravityScale = 0.3;
     bodyDef.type = b2BodyType::b2_dynamicBody;
     _body = _game->getWorld()->CreateBody(&bodyDef);
     
